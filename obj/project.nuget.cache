@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "E6svbdxj4N0=",
+  "success": true,
+  "projectFilePath": "/home/leonjaro/Escritorio/proyectoNuevo/proyectoNuevo.csproj",
+  "expectedPackageFiles": [
+    "/home/leonjaro/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.1/microsoft.aspnetcore.app.ref.9.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
