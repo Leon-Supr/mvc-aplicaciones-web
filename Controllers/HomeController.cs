@@ -1,16 +1,19 @@
 using System.Diagnostics;
+using System.Reflection.Metadata.Ecma335;
 using Microsoft.AspNetCore.Mvc;
 using proyectoNuevo.Models;
+using proyectoNuevo.Data;
 
 namespace proyectoNuevo.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private readonly MySQLDbContext _context;
 
-    public HomeController(ILogger<HomeController> logger)
+
+    public HomeController(MySQLDbContext context)
     {
-        _logger = logger;
+        _context = context;
     }
 
     public IActionResult Index()
@@ -69,6 +72,39 @@ public class HomeController : Controller
             WEIGHT = 55
         };
         return View(vehicle);
+    }
+
+    public IActionResult VerItems(int id)
+    {
+        List<Item> items = _context.Items.ToList();
+        return View(items);
+    }
+    // public IActionResult VerItems()
+    // {
+    //     Item[] arrItems = {
+    //     new Item { id = 1, name = "Caja de cigarrillos", type = "Suplemento alimenticio", STR = 10, AGI = 10, INTE = 10, MND = 10, VIT = 1 },
+    //     new Item { id = 2, name = "Caja de cerillos", type = "Suplemento alimenticio", STR = 8, AGI = 16, INTE = 17, MND = 6, VIT = 4 },
+    //     new Item { id = 3, name = "Caja de cereal", type = "Suplemento alimenticio", STR = 5, AGI = 12, INTE = 3, MND = 4, VIT = 7 }
+    // };
+    //     return View(arrItems);
+    // }
+
+    [HttpGet("Home/ElItem/{name}/{id}")] //Para que sea un link amigable
+    public IActionResult ElItem(int id, string name)
+    {
+        return Content($"El id es: {id} y el nombre es {name}");
+    }
+
+    public IActionResult ItemESpecifico(int id)
+    {
+        Item[] arrItems = {
+        new Item { id = 1, name = "Caja de cigarrillos", type = "Suplemento alimenticio", STR = 10, AGI = 10, INTE = 10, MND = 10, VIT = 1 },
+        new Item { id = 2, name = "Caja de cerillos", type = "Suplemento alimenticio", STR = 8, AGI = 16, INTE = 17, MND = 6, VIT = 4 },
+        new Item { id = 3, name = "Caja de cereal", type = "Suplemento alimenticio", STR = 5, AGI = 12, INTE = 3, MND = 4, VIT = 7 }
+    };
+        Item? item = arrItems.FirstOrDefault(p => id == p.id);
+        if (item == null) return NotFound("No se econtró");
+        return View("ItemMuestra", item);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
