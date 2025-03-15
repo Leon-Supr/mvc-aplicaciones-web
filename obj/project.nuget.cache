@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bpcftDLZ6aM=",
+  "dgSpecHash": "6C9dFcCdw9g=",
   "success": true,
-  "projectFilePath": "/home/leonjaro/Escritorio/proyectoNuevo/proyectoNuevo.csproj",
+  "projectFilePath": "/home/leonjaro/Escritorio/Real Desk/proyectoNuevo/proyectoNuevo.csproj",
   "expectedPackageFiles": [
     "/home/leonjaro/.nuget/packages/microsoft.entityframeworkcore/9.0.0/microsoft.entityframeworkcore.9.0.0.nupkg.sha512",
     "/home/leonjaro/.nuget/packages/microsoft.entityframeworkcore.abstractions/9.0.0/microsoft.entityframeworkcore.abstractions.9.0.0.nupkg.sha512",

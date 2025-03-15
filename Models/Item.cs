@@ -5,9 +5,9 @@ namespace proyectoNuevo.Models
     public class Item
     {
         public  int id {get; set;} //Como crear un metodo para get y set individuales
-        [Required(ErrorMessage = "Este campo es requerido")]
-        [StringLength(8, ErrorMessage = "Debe contener máximo 8 caracters")]
         
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [StringLength(30, ErrorMessage = "Debe contener máximo 30 caracters")]
         public string name {get; set;}
         //[Required(ErrorMessage = "Este campo es requerido")]
         public string type {get; set;}

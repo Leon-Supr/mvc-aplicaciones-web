@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/leonjaro/Escritorio/proyectoNuevo/proyectoNuevo.csproj": {}
+    "/home/leonjaro/Escritorio/Real Desk/proyectoNuevo/proyectoNuevo.csproj": {}
   },
   "projects": {
-    "/home/leonjaro/Escritorio/proyectoNuevo/proyectoNuevo.csproj": {
+    "/home/leonjaro/Escritorio/Real Desk/proyectoNuevo/proyectoNuevo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/leonjaro/Escritorio/proyectoNuevo/proyectoNuevo.csproj",
+        "projectUniqueName": "/home/leonjaro/Escritorio/Real Desk/proyectoNuevo/proyectoNuevo.csproj",
         "projectName": "proyectoNuevo",
-        "projectPath": "/home/leonjaro/Escritorio/proyectoNuevo/proyectoNuevo.csproj",
+        "projectPath": "/home/leonjaro/Escritorio/Real Desk/proyectoNuevo/proyectoNuevo.csproj",
         "packagesPath": "/home/leonjaro/.nuget/packages/",
-        "outputPath": "/home/leonjaro/Escritorio/proyectoNuevo/obj/",
+        "outputPath": "/home/leonjaro/Escritorio/Real Desk/proyectoNuevo/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/leonjaro/.nuget/NuGet/NuGet.Config"
