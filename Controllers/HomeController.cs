@@ -117,7 +117,7 @@ public class HomeController : Controller
     }
 
     [HttpPost]
-    [ValidateAntiForgeryToken]
+    //[ValidateAntiForgeryToken] 
     public async Task<IActionResult> Modificar(Item item)
     {
         if (ModelState.IsValid)
@@ -127,14 +127,15 @@ public class HomeController : Controller
                 _context.Items.Update(item);
                 await _context.SaveChangesAsync();
             }
-            catch (DBConcurrencyException)
+            catch (DbUpdateConcurrencyException) // `DbConcurrencyException` no existe en EF Core, este sí.
             {
-                return Content("Error al modificar el item");
+                return Content("Error al modificar el item. Puede que el registro haya sido modificado por otro usuario.");
             }
             return RedirectToAction("VerItems");
         }
         return View(item);
     }
+
 
     [HttpGet("Home/ElItem/{name}/{id}")] //Para que sea un link amigable
     public IActionResult ElItem(int id, string name)
