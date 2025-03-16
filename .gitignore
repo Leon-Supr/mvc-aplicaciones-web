@@ -1,5 +1,7 @@
 # Archivos y carpetas de compilación
 bin/
+bin/Debug/
+bin/Release/
 obj/
 
 # Configuraciones de desarrollo (pueden contener credenciales o datos sensibles)
@@ -23,3 +25,6 @@ node_modules/
 # Archivos de caché de Visual Studio
 .vs/
 Thumbs.db
+
+# Archivos generados dinámicamente en wwwroot
+wwwroot/
