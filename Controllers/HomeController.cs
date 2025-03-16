@@ -136,6 +136,33 @@ public class HomeController : Controller
         return View(item);
     }
 
+    //Eliminar
+    [HttpGet]
+    public async Task<IActionResult> Eliminar(int id)
+    {
+        Item? item = await _context.Items.FindAsync(id);
+        if (item == null)
+        {
+            return NotFound();
+        }
+        return View(item);
+    }
+
+    [HttpPost, ActionName("Eliminar")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> EliminacionConfirmada(int id)
+    {
+        var item = await _context.Items.FindAsync(id);
+        if (item == null)
+        {
+            return NotFound();
+        }
+
+        _context.Items.Remove(item);
+        await _context.SaveChangesAsync();
+        return RedirectToAction("VerItems");
+    }
+
 
     [HttpGet("Home/ElItem/{name}/{id}")] //Para que sea un link amigable
     public IActionResult ElItem(int id, string name)

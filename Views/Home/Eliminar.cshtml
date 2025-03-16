@@ -1,0 +1,19 @@
+@model Item
+
+<h2>Detalles del producto a eliminar</h2>
+
+<table>
+    <tr><th>Atributo</th><th>Valor</th></tr>
+    <tr><td>ID</td><td>@Model.id</td></tr>
+    <tr><td>Name</td><td>@Model.name</td></tr>
+    <tr><td>Type</td><td>@Model.type</td></tr>
+    <tr><td>STR</td><td>@Model.STR</td></tr>
+    <tr><td>AGI</td><td>@Model.AGI</td></tr>
+    <tr><td>INTE</td><td>@Model.INTE</td></tr>
+    <tr><td>MND</td><td>@Model.MND</td></tr>
+    <tr><td>VIT</td><td>@Model.VIT</td></tr>
+</table>
+
+<form method="POST" asp-action="Eliminar">
+    <button type="submit">¿Desea Eliminar el Item?</button>
+</form>
